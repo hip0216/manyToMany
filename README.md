@@ -53,7 +53,12 @@ DB_PASSWORD=secret
 ```
 php artisan migrate
 ```
-再把```.env```裡的```DB_HOST```修改成mysql就大功告成囉！！！
+再修改```.env```的```DB_HOST=mysql```就大公告成囉！！！
 
-#生成測試資料
+# 生成測試資料
 
+本專案有設定seed預設隨機生成20篇文章與30個標籤並且文章與標籤之間的關聯也會隨機生成<br>
+運行方式如下在```DB_HOST=127.0.0.1```時在終端機上輸入下面指令就會自動生成
+```
+php artisan DB:seed  
+```
