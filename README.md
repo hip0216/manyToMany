@@ -62,3 +62,8 @@ php artisan migrate
 ```
 php artisan DB:seed  
 ```
+如果要修改生成數量則修改以下兩支檔案
+```
+專案名稱/database/seeds/PostTableSeeder.php
+專案名稱/database/seeds/TagTableSeeder.php
+```
