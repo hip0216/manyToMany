@@ -14,7 +14,7 @@ class TagTableSeeder extends Seeder
     {
         DB::table('tag')->truncate();
         Tag::unguard();
-        factory(Tag::class, 20)->create();
+        factory(Tag::class, 30)->create();
         Tag::reguard();
     }
 }
