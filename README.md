@@ -37,7 +37,23 @@ cp env-example .env
 ```
 docker-compose up -d nginx mysql phpmyadmin redis workspace 
 ```
-最後輸入網址檢測有沒有成功運行
+於瀏覽器下輸入網址檢測有沒有成功運行
 ```
 http://127.0.0.1
 ```
+最後還需要建構資料庫<br>
+首先修改於先前建立的```.env```改成以下設定
+```
+DB_HOST=127.0.0.1
+DB_DATABASE=default
+DB_USERNAME=default
+DB_PASSWORD=secret
+```
+再來輸入以下指令生成資料表
+```
+php artisan migrate
+```
+再把```.env```裡的```DB_HOST```修改成mysql就大功告成囉！！！
+
+#生成測試資料
+
