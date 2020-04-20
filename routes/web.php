@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Articles\ElasticsearchRepository;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {return view('articles.index', ['articles' => App\Article::all(),]);});
 Route::resource('/post','PostController'); 
-Route::resource('/tag','tagController');
+Route::resource('/tag','tagController'); 
 
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/mail', 'MailtestController');

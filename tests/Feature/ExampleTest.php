@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Database\Seeder;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
@@ -14,8 +15,7 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
-
+        dd($this->call(DatabaseSeeder::class));
         $response->assertStatus(200);
     }
 }

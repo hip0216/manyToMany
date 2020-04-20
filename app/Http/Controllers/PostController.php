@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
-use App\tag;
+use App\Tag;
 use DB;
 
 class PostController extends Controller
@@ -43,8 +43,8 @@ class PostController extends Controller
             'body'=>'required',
         ]);
         $post = Post::create($request->all());
-        $post->title=$request->title;
-        $post->body=$request->body;
+        $post->title=password_hash($request->title, PASSWORD_DEFAULT);
+        $post->body=password_hash($request->body, PASSWORD_DEFAULT);
         $post->tag()->sync($request->tag,false);
         $post->save();
         return redirect('/post')->with('success','Post Created');
